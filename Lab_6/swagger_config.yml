@@ -1,0 +1,10 @@
+class BookList(Resource):
+    def get(self):
+        """Get all books
+        ---
+        responses:
+          200:
+            description: A list of books
+        """
+        books = collection.find()
+        return [book_serializer(book) for book in books]
